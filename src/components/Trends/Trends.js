@@ -1,6 +1,8 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {moviesActions} from "../../redux";
+import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
+import css from './Trends.module.css'
 
 const Trends = () => {
 
@@ -11,11 +13,13 @@ const Trends = () => {
         dispatch(moviesActions.trends())
     },[dispatch])
 
-    console.log(trends);
+    const results = trends.results
 
     return (
-        <div>
-            {error && JSON.stringify(error)}
+        <div className={css.Main}>
+            {results &&
+            results.map(post => <MoviesListCard key={post.id} post={post}/>)
+            }
         </div>
     )
 }

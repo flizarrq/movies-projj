@@ -7,7 +7,7 @@ const initialState =  {
     trends: [],
     error: null
 };
-
+c
 const trends = createAsyncThunk(
     'moviesSlice/trends',
     async (_,thunkAPI) => {
