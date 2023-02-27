@@ -1,10 +1,11 @@
 import css from './Header.module.css'
 import ded from '../../images/ded.png'
+import {Link} from "react-router-dom";
 const Header = () => {
 
     return (
         <div className={css.Header}>
-            <div>home</div>
+            <Link to={'/'}>home</Link>
             <div>dark/light</div>
             <div>movies</div>
             <div>tv</div>
@@ -14,7 +15,7 @@ const Header = () => {
             </div>
             <div className={css.Profile}>
                 <div>igor link</div>
-                <img src={ded} alt="userImage"/>
+                <img className={css.img} src={ded} alt="userImage"/>
             </div>
         </div>
     )

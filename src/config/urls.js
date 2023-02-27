@@ -7,6 +7,8 @@ const urls = {
     trends: '/trending/movie/day',
     movie: '/discover/movie',
     tv: '/discover/tv',
+    genres: 'genre/movie/list',
+    movieById: (id) => `/movie/${id}`
 }
 
 export {

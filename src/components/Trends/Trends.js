@@ -11,15 +11,24 @@ const Trends = () => {
 
     useEffect(()=> {
         dispatch(moviesActions.trends())
+        dispatch(moviesActions.getGenres())
+
     },[dispatch])
+
 
     const results = trends.results
 
     return (
         <div className={css.Main}>
-            {results &&
-            results.map(post => <MoviesListCard key={post.id} post={post}/>)
-            }
+            <h1>Trending</h1>
+            <div className={css.Grid}>
+                {results &&
+                results.map(post => <MoviesListCard key={post.id} post={post}/>)
+                }
+            </div>
+            <div className={css.Buttom}>
+                button
+            </div>
         </div>
     )
 }
