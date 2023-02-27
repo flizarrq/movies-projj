@@ -1,41 +1,36 @@
-import css from './MovieInfo.module.css'
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {moviesActions} from "../../redux";
-import {Player} from "../stuff/player";
+import {moviesActions} from "../../../redux";
+import css from "../../movies/MovieInfo/MovieInfo.module.css";
+import {TvPlayer} from "../../stuff/Tvplayer";
 
-
-const MovieInfo = () => {
+const TvInfo = () => {
 
     const baseUrl = 'https://image.tmdb.org/t/p/w500'
     const {id} = useParams();
 
     const dispatch = useDispatch();
-    const {movie,showPlayer} = useSelector(state => state.movies);
+    const {tv,showPlayer} = useSelector(state => state.movies);
 
 
     useEffect(() => {
-        dispatch(moviesActions.byId({id}))
+        dispatch(moviesActions.byIdTv({id}))
     },[dispatch])
-
-    console.log(movie);
-
-
 
 
     return (
         <div className={css.BColor}>
             <div className={css.Main} >
-                <h5 className={css.Title}>{movie && movie.original_title}</h5>
+                <h5 className={css.Title}>{tv && tv.original_title}</h5>
                 <div className={css.Block}>
-                    {movie &&
+                    {tv &&
                         <div>
-                            <img className={css.img} src={`${baseUrl}/${movie.poster_path}`} alt=""/>
+                            <img className={css.img} src={`${baseUrl}/${tv.poster_path}`} alt=""/>
                             <div className={css.trailer} onClick={() => dispatch(moviesActions.showPlayer(!showPlayer))} >watch trailer</div>
                         </div>
                     }
-                    {movie &&
+                    {tv &&
                         <div className={css.info}>
                             <div className={css.info_middle}>
                                 <div>Ratings:</div>
@@ -51,18 +46,18 @@ const MovieInfo = () => {
                                 <div>budget:</div>
                             </div>
                             <div>
-                                <div>{movie.vote_average}</div>
-                                <div>{movie.release_date}</div>
-                                <div>{movie.production_countries[0].name}</div>
-                                <div>{movie.production_companies[0].name}</div>
-                                <div>{movie.genres.map((genre, index) => (index === movie.genres.length - 1)
+                                <div>{tv.vote_average}</div>
+                                <div>{tv.release_date}</div>
+                                {/*<div>{tv.production_countries[0].name}</div>*/}
+                                {/*<div>{tv.production_companies[0].name}</div> */}
+                                <div>{tv.genres.map((genre, index) => (index === tv.genres.length - 1)
                                     ? `${genre.name}` : `${genre.name}, `)}</div>
                                 {/*<div>original language: {movie.original_language}</div>*/}
-                                <div>{movie.spoken_languages[0].name}</div>
-                                <div>{movie.runtime+' min'}</div>
-                                <div>{movie.popularity}</div>
-                                <div>{movie.adult.toString()}</div>
-                                <div>{movie.budget+'$'}</div>
+                                <div>{tv.spoken_languages[0].name}</div>
+                                <div>{tv.runtime+' min'}</div>
+                                <div>{tv.popularity}</div>
+                                <div>{tv.adult.toString()}</div>
+                                <div>{tv.budget+'$'}</div>
                             </div>
                         </div>
                     }
@@ -70,19 +65,19 @@ const MovieInfo = () => {
                 <div>
                     <div>
                         <h5 className={css.movieName}>
-                            What's the movie "{movie && movie.original_title}" about:
+                            What's the movie "{tv && tv.original_name}" about:
                         </h5>
                     </div>
-                    {movie &&
-                        <div>overview: {movie.overview}</div>}
+                    {tv &&
+                        <div>overview: {tv.overview}</div>}
                 </div>
 
                 {showPlayer&& <div>
-                    <Player movie={movie}/>
+                    <TvPlayer tv={tv}/>
                 </div>}
 
             </div>
         </div>
     )
 }
-export {MovieInfo};
+export {TvInfo};

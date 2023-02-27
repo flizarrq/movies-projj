@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {moviesActions} from "../../redux";
-import css from "../Trends/Trends.module.css";
+import {moviesActions} from "../../../redux";
+import css from "../../Trends/Trends.module.css";
 import {TVListCard} from "../TvListCard/TvListCard";
 
 const TvList = () => {

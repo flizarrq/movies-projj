@@ -5,8 +5,8 @@ import css from './App.css'
 import {MoviesList, Trends, UserInfo} from "./components";
 import {MovieInfo} from "./components";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {TvList} from "./components/TvList/TvList";
-import {TvInfo} from "./components/TvInfo/TvInfo";
+import {TvList} from "./components/tvs/TvList/TvList";
+import {TvInfo} from "./components/tvs/TvInfo/TvInfo";
 import {GenreInfoMovie} from "./components/GenreInfoMovie/GenreInfoMovie";
 import {Search} from "./components/Search/Search";
 

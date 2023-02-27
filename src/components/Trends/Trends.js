@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {moviesActions} from "../../redux";
-import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
+import {MoviesListCard} from "../movies/MoviesListCard/MoviesListCard";
 import css from './Trends.module.css'
 
 const Trends = () => {

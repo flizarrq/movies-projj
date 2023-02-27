@@ -2,7 +2,7 @@ import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {moviesActions} from "../../redux";
-import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
+import {MoviesListCard} from "../movies/MoviesListCard/MoviesListCard";
 import css from './GenreInfoMovie.module.css'
 
 const GenreInfoMovie = () => {
