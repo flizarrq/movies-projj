@@ -25,7 +25,7 @@ const Search = () => {
             <div >
                 <div className={css.Main}>
 
-                    {results.length>1 ?
+                    {results?.length>1 ?
                         results.map(post => <MoviesListCard key={post.id} post={post}/>) : <div className={css.notFound}>
                             not found !
                         </div>
