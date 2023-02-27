@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {moviesActions} from "../../redux";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
@@ -8,15 +8,17 @@ const Trends = () => {
 
     const dispatch = useDispatch();
     const {trends,error} = useSelector(state => state.movies);
+    const [page,setPage] = useState(1);
 
     useEffect(()=> {
-        dispatch(moviesActions.trends())
+        dispatch(moviesActions.trends({page:page}))
         dispatch(moviesActions.getGenres())
 
-    },[dispatch])
+    },[dispatch,page])
 
 
     const results = trends.results
+
 
     return (
         <div className={css.Main}>
@@ -27,7 +29,13 @@ const Trends = () => {
                 }
             </div>
             <div className={css.Buttom}>
-                button
+                <div>
+                    <button disabled={page===1} onClick={() => setPage(page-1)} >-1</button>
+                </div>
+                <div>current: {trends.page}</div>
+                <div>
+                    <button disabled={page===trends.total_pages} onClick={() => setPage(page+1)} >+1</button>
+                </div>
             </div>
         </div>
     )

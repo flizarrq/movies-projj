@@ -36,3 +36,10 @@ button{
 .Profile:hover{
     cursor: pointer;
 }
+.Header a{
+    color: snow;
+    text-decoration: none;
+}
+.active{
+    color: red;
+}

@@ -4,7 +4,6 @@
     grid-gap: 20px;
     margin: 50px 300px 0 300px;
 
-
 }
 h1{
     /*display: block;*/
@@ -24,4 +23,9 @@ h1{
 }
 .Buttom{
     height: 80px;
+    color: snow;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 400px 0 400px ;
+    padding-top: 30px;
 }

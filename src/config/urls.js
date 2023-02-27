@@ -8,7 +8,14 @@ const urls = {
     movie: '/discover/movie',
     tv: '/discover/tv',
     genres: 'genre/movie/list',
-    movieById: (id) => `/movie/${id}`
+    tv_genres: 'genre/tv/list',
+    movieById: (id) => `/movie/${id}`,
+    tvById: (id) => `/tv/${id}`,
+    videos: (movieId) => `/movie/${movieId}/videos`,
+    videosTv: (tvId) => `/tv/${tvId}/videos`,
+    // movieByGenreId: (id) => `/discover/movie?with_genres=${id}`,
+    movieByGenreId: (id) => `/discover/movie?with_genres=${id}`,
+    search: (word) => `/search/movie?query=${word}`
 }
 
 export {

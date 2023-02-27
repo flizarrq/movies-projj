@@ -23,16 +23,19 @@ const MoviesListCard = ({post}) => {
     return (
             <div className={css.Main}>
                 <div>
-                    <img src={baseUrl + post.poster_path} alt=""/>
+                    <img className={css.img} src={baseUrl + post.poster_path} alt=""/>
                 </div>
                 <div>
                     <div>
-                        <Link to={`movies/${post.id}`} className={css.title}>{post.original_title}</Link>
+                        <Link to={`/movies/${post.id}`} className={css.title}>{post.original_title}</Link>
                     </div>
                     <div className={css.Genres}>
-                        <div>{post.release_date.slice(0,4)},</div>
-                        <div className={css.GenreresFirst}>{movieGenresWithNames[0].name}{movieGenresWithNames[1] ? ',': '' }</div>
-                        <div>{movieGenresWithNames[1] && movieGenresWithNames[1].name}</div>
+                        <div>{post?.release_date && post.release_date.slice(0,4)},</div>
+                        {movieGenresWithNames[0]?.name &&
+                            <div className={css.GenreresFirst}>{movieGenresWithNames[0].name}{movieGenresWithNames[1] ? ',': '' }</div>
+                        }
+
+                        <div>{movieGenresWithNames[1] && movieGenresWithNames[1]?.name}</div>
                     </div>
                 </div>
             </div>

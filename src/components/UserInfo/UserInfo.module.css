@@ -1,0 +1,29 @@
+.img{
+    height: 100px;
+}
+.Main{
+    margin: 0 500px 0 500px;
+    color: snow;
+    padding-top: 50px;
+}
+.image{
+    display: flex;
+}
+.choose{
+    margin: 20px 0 20px 0;
+    background-color: #2e393e;
+    color: snow;
+    border-radius: 10px;
+    width: 130px;
+    padding-top: 15px;
+    padding-left: 15px;
+    user-select: none;
+}
+.choose:hover{
+    cursor: pointer;
+
+}
+.bc{
+    background-color: #09161c;
+    height: 95vh;
+}

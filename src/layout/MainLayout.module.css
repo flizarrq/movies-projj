@@ -1,0 +1,25 @@
+.block{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 120px;
+    height: 30px;
+    background-color: rgba(200, 200, 200, 0.91);
+    color: #09161c;
+    cursor: pointer;
+    user-select: none;
+    padding-left: 10px;
+}
+.filter{
+    position: absolute;
+    width: 120px;
+    top: 80px;
+    height: 450px;
+    background-color: rgba(200, 200, 200, 0.91);
+    padding-left: 10px;
+    border-top: 1px solid black;
+}
+.filter a{
+    text-decoration: none;
+    color: black;
+}
